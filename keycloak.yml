@@ -10,13 +10,13 @@ services:
       - DB_DATABASE=keycloak
       - DB_ADDR=keycloak-db
       - DB_USER=keycloak
-      - DB_PASSWORD=changeme
+      - DB_PASSWORD=dbEvosus7414
       - KEYCLOAK_USER=admin
-      - KEYCLOAK_PASSWORD=changeme
+      - KEYCLOAK_PASSWORD=keyEvosus7414
       - PROXY_ADDRESS_FORWARDING=true # This is required to run keycloak behind traefik
       - KEYCLOAK_HOSTNAME=${KEYCLOAK_DOMAIN?Variable not set}
       - POSTGRES_USER=keycloak
-      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_PASSWORD=dbEvosus7414
     volumes:
       - /etc/localtime:/etc/localtime:ro
     networks:
@@ -43,13 +43,13 @@ services:
       - DB_DATABASE=keycloak
       - DB_ADDR=keycloak-db
       - DB_USER=keycloak
-      - DB_PASSWORD=changeme
+      - DB_PASSWORD=dbEvosus7414
       - KEYCLOAK_USER=admin
-      - KEYCLOAK_PASSWORD=changeme
+      - KEYCLOAK_PASSWORD=keyEvosus7414
       - PROXY_ADDRESS_FORWARDING=true # This is required to run keycloak behind traefik
       - KEYCLOAK_HOSTNAME=${KEYCLOAK_DOMAIN?Variable not set}
       - POSTGRES_USER=keycloak
-      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_PASSWORD=dbEvosus7414
       - KEYCLOAK_LOGLEVEL=WARNING
     volumes:
       - /var/data/runtime/keycloak/database:/var/lib/postgresql/data
@@ -62,7 +62,7 @@ services:
     environment:
       - PGHOST=keycloak-db
       - PGUSER=keycloak
-      - PGPASSWORD=changeme
+      - PGPASSWORD=dbEvosus7414
       - BACKUP_NUM_KEEP=7
       - BACKUP_FREQUENCY=1d
     volumes:

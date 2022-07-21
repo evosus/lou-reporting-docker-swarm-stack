@@ -5,10 +5,10 @@ services:
     image: thomseddon/traefik-forward-auth:2
     environment:
       - DEFAULT_PROVIDER=oidc
-      - PROVIDERS_OIDC_ISSUER_URL=https://${KEYCLOAK_DOMAIN?Variable not set}/auth/realms/master
+      - PROVIDERS_OIDC_ISSUER_URL=https://${KEYCLOAK_DOMAIN?Variable not set}/auth/realms/lou
       - PROVIDERS_OIDC_CLIENT_ID=${AUTH_CLIENT_ID?Variable not set}
       - PROVIDERS_OIDC_CLIENT_SECRET=${AUTH_CLIENT_SECRET?Variable not set}
-      - SECRET=change_to_a_random_string
+      - SECRET=evosusrocks1!
       # INSECURE_COOKIE is required if not using a https entrypoint
       # - INSECURE_COOKIE=true
       - LOG_LEVEL=debug
@@ -32,7 +32,7 @@ services:
         - "traefik.http.routers.forward-auth.service=traefik-forward-auth"
 
   stapp:
-    image: presstofan/streamlit-demo
+    image: shawkins/lou-reporting:v1.0.2
     depends_on:
       - traefik-forward-auth
     ports:
